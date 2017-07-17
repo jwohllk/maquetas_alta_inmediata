@@ -1,0 +1,74 @@
+/*Utilities*/
+
+.u-blue-text {
+	color: #006ec1;
+}
+
+.u-align-left {
+	text-align: left;
+}
+
+/*.components*/
+
+.equifaxQuestions {
+	padding: 15px;
+}
+
+.equifaxQuestions .column:last-child:not(:first-child) {
+	float:left;
+}
+
+.termConsiderations {
+	font-size: 14px;
+	text-decoration: underline;
+}
+
+.equifaxTerms {
+	padding: 0px 15px;
+    text-align: left;
+}
+
+.equifaxTerms .labelTerm{
+	display:inline;
+	margin-left: 15px;
+}
+
+.acceptTermConditions {
+	display: none;
+}
+
+.equifaxTerms .label-error {
+	color : #c4136c;
+	margin-left: 0px;
+}
+
+.altainmediata-step23 {
+	background: #F4F4F4;
+}
+
+div .offer-altainmediata {
+	width: auto !important;
+	padding: 20px 38px 38px 38px !important;
+}
+
+.side_leftaltainmediata {
+	margin-bottom: auto !important;
+	padding-bottom: 0px !important;
+}
+
+@media (max-width: 480px) {
+	.u-title-responsive {
+		text-align: center;
+	}
+}
+
+@media screen and (min-width: 40em) {
+	div .offer-altainmediata {
+		width: auto !important;
+		padding: 30px 30px 30px 30px !important;
+	}
+}
+
+@media screen and (min-width: 60em) {
+
+}

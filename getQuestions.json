@@ -1,0 +1,113 @@
+{
+  "questionAnswers": [
+    {
+      "number": 1,
+      "description": "Cual es el apellido materno de su conyuge?",
+      "alternatives": [
+        {
+          "number": 1,
+          "description": "IBARRA"
+        },
+        {
+          "number": 2,
+          "description": "GONZALEZ"
+        },
+        {
+          "number": 3,
+          "description": "PEREZ"
+        },
+        {
+          "number": 5,
+          "description": "GALAZ"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "description": "Como se llama tu madre?",
+      "alternatives": [
+        {
+          "number": 1,
+          "description": "IBARRA"
+        },
+        {
+          "number": 2,
+          "description": "GONZALEZ"
+        },
+        {
+          "number": 3,
+          "description": "PEREZ"
+        },
+        {
+          "number": 5,
+          "description": "GALAZ"
+        }
+      ]
+    }
+  ],
+  "equifaxCustomerAuthentication": {
+    "transactionKey": "123456789"
+  }
+}
+
+
+
+
+
+
+
+{
+    "code": "00",
+    "description": "0",
+    "object": {
+        "questionAnswers": [
+            {
+                "number": 1,
+                "description": "Cual es el apellido materno de su conyuge?",
+                "alternatives": [
+                    {
+                        "number": 1,
+                        "description": "IBARRA"
+                    },
+                    {
+                        "number": 2,
+                        "description": "GONZALEZ"
+                    },
+                    {
+                        "number": 3,
+                        "description": "PEREZ"
+                    },
+                    {
+                        "number": 5,
+                        "description": "GALAZ"
+                    }
+                ]
+            },
+            {
+                "number": 2,
+                "description": "Como se llama tu madre?",
+                "alternatives": [
+                    {
+                        "number": 1,
+                        "description": "IBARRA"
+                    },
+                    {
+                        "number": 2,
+                        "description": "GONZALEZ"
+                    },
+                    {
+                        "number": 3,
+                        "description": "PEREZ"
+                    },
+                    {
+                        "number": 5,
+                        "description": "GALAZ"
+                    }
+                ]
+            }
+        ],
+        "equifaxCustomerAuthentication": {
+            "transactionKey": "123456789"
+        }
+    }
+}

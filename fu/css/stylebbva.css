@@ -1,0 +1,583 @@
+.cloud-contact h1 {
+  font-family: "BBVA Web",arial,sans-serif !important; }
+.cloud-contact h4 {
+  font-size: 22px;
+  color: #434A58;
+  font-weight: 200; }
+  .cloud-contact  .btn {
+    background: #fff;
+    color: #00559d; }
+.cloud-contact .bootstrap-select:not([class*="span"]):not([class*="col-"]):not([class*="form-control"]) {
+  width: 100% !important; }
+.cloud-contact .capgemini-tables .tables-body.table-scroll table tr td:first-child {
+  text-align: left;
+  padding-left: 20px !important;
+  color: #71777f;
+  font-weight: 500; }
+.cloud-contact .progress {
+  height: 10px !important;
+  margin-bottom: 5px !important; }
+.cloud-contact .alert-success p {
+  text-align: center;
+  font-size: 16px; }
+.cloud-contact .fileUpload {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0px 5px 5px 0px;
+  margin-left: -3px;
+  margin-top: -2px;
+  width: 23%; }
+  .cloud-contact .fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0); }
+.cloud-contact .upload-doc {
+  border-radius: 1px;
+  border: 1px solid #D5E2EE;
+  text-align: justify;
+  padding: 8px; }
+  .cloud-contact .upload-doc label {
+    color: #006ec1;
+    font-size: 17px; }
+.cloud-contact .producto-solicitar label {
+  width: 100%;
+  margin: 4px 0px 0px 4px;
+  color: rgba(255, 255, 255, 0); }
+
+.blocker {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+main {
+      margin-top: 30px;
+}
+
+
+
+/*estilos propios formulario*/
+
+.paso1 {
+
+}
+
+.paso1 .boxIcons p {
+    padding: 11px 0px 0px 4px;
+    text-align: left;
+}
+
+.paso1 .boxIcons img {
+    float:left; padding:8px;
+}
+
+@media(max-width: 959px){
+    .paso1 .boxIcons .hiddenMedium {
+    display: none;
+    }
+    .paso1 .boxIcons p {
+        text-align: center !important;
+    }
+    .paso1 .boxIcons img {
+        float:none !important; 
+
+        }
+}
+
+@media(max-width: 959px){
+    .hiddenMedium {
+        display: none !important;
+        }
+    .showMedium {
+        display: block !important;
+    }
+}
+
+.showMedium {
+    display: none;
+}
+
+@media(max-width: 59em){
+  .hiddenMedium {
+    display: none !important;
+  }
+}
+
+
+
+/*Table*/
+
+.uploadTable table tbody th, table tbody td {
+    padding: 1rem 0rem 1rem;
+    border-bottom: 1px solid #E9E9E7;
+}
+
+.uploadTable .lasTable table tbody th, table tbody td {
+    border-bottom: 1px solid #fefefe;
+}
+
+
+.uploadTable  table thead, table tbody, table tfoot {
+    border: 1px solid #fff;
+    background-color: #fefefe;
+}
+
+.uploadTable .title {
+  font-size: 17px;color: #000;font-weight: 600;
+}
+
+.uploadTable tr {
+  background-color: #fff !important;
+}
+
+.uploadTable .subtitle {
+  margin-top: -5px;
+ }
+
+.uploadTable .inputTable{
+  width: 66%;
+  padding: 8px;
+  margin-right: -3px;
+  background: #fff;
+  border-radius: 4px 0px 0px 4px;
+  border: 1px solid #D5E2EE;
+ }
+
+
+ .uploadTable .btnTable{
+  padding: 10px 20px 10px 20px;
+  border-radius: 0px 4px 4px 0px;
+  margin-bottom: 0px !important;
+  /* float: right; */
+ }
+
+
+.banner {
+    height:120px;
+}
+
+.contentSteps1{
+   background-color: #FAFAFA;
+   /* height: 150px; */
+   padding: 8px;
+   text-align: center;
+}
+.font_lite .line_space_5 p {
+    text-align: center; font-size:30px;
+}
+
+.producto-solicitar p{
+    font-size: 13px;font-weight: 600;
+}
+
+.producto-solitar .contentImg {
+    height:50px;
+}
+
+.contentUploadFile {
+    border: solid 1px #D5E2EE; 
+    padding:8px; 
+    margin-top: 16px;
+}
+
+.contentUploadFile .gravamen{
+    font-size: 17px !important; 
+    font-family:'stag_sans_book'; 
+    color: #143F9F; 
+    padding-top: 2px;
+}
+.contentUploadFile .help{
+    float: none !important;
+    padding-left: 8px;
+}
+
+
+.contentTableUpload {
+    height: 40px
+}
+
+.contentTableUpload .head {
+    border-bottom: 1px solid #ccc; 
+    height: 55px;
+}
+.contentTableUpload .head p {
+    text-align: left !important; 
+    color:#0078D2; 
+    margin-top: 8px; 
+    font-size: 30px;
+}
+
+.button_blank {
+    .background-image: linear-gradient(-180deg, #fff 0%, #F6F8F9 100%)
+    border: 1px solid #D5E1ED;
+    color: #0170D7;
+    border-radius: 4px 4px 0px 0px;
+    /* float: right; */
+    width: 98%;
+    background-image: linear-gradient(-180deg, #F6F8F9 0%, #ffffff 100%);
+    border: 1px solid #D5E1ED;
+}
+
+.resultBorder{
+    border: 1px solid #DCDCDC;
+}
+
+.uploadCenter {
+    font-size: 14px; text-align: center;
+}
+
+
+.modalSms {
+    margin-top: 40px !important;
+    text-align: center !important;
+    height: 10px !important;
+}
+.modalSms .content {
+    border-bottom: 1px solid #E8E8E8;  padding-bottom: 8px !important;
+}
+.modalSms .content h2 {
+    /* text-align: center; */
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    color: #094FA4;
+    padding-top: 11px;
+}
+.modalSms .content h2 strong {
+    font-weight: 700;
+}
+.modalSms .contentSection p {
+    text-align: center;
+    padding: 20px;
+    color: #000;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.modalSms .contentSection .items img {
+    padding: 4px;
+}
+
+.modalSms .contentSection .items p {
+    font-size: 14px;
+    line-height: normal;
+    color: #000;
+    font-weight: 500;
+    text-align: center;
+    padding: 5px !important;
+}
+
+.producto-solicitar .checks_condition {
+    width: 100%
+}
+
+.contentImg {
+    height: 80px;
+}
+
+.modalSave {
+    margin-top: 40px !important; text-align: center; height: 10px !important;
+}
+
+.headModal {
+    background-color: #eaeaea; padding-top: 30px; text-align: center !important; font-weight: 500;
+}
+
+.modalSave h1 {
+    text-align: center; text-align: center; font-size: 26px; font-weight: 300; color: #0078D2
+}
+
+.image2{
+   display: none;
+}
+
+
+.dap-items {
+    text-align: left;
+    font-family: stag_sans_ligth;
+    color: #006ec1;
+}
+
+.dap-items label {
+    color: #064CA4;
+    font-size: 20px !important;
+    font-family: stag_sans_ligth !important;
+}
+
+.dap-items p {
+    color: #064CA4;
+    font-family: stag_sans_ligth;
+    font-size: 14px;
+}
+
+@media (max-width: 415px){ 
+   .image1{
+     display: none !important;
+   }
+
+   .image2{
+     display: block;
+   }
+}
+
+
+@media only screen and (max-width: 1024px){
+    .buttonMobile {
+        margin:4px !important;
+    }
+    .inputTable {
+        width: 77% !important;
+        margin: 10px 16px;
+    }
+
+    .modalSize {
+        width: 100% !important;
+        top: -15px !important;
+    }
+    .content_text p {
+        line-height: normal;
+    }
+
+    .button_close_modal {
+        margin-bottom: 4px !important;
+    }
+
+    .modalSize .contentItems {
+        width: 100% !important;
+    }
+    .side_rigth {
+        margin-top: 0PX !important;
+    }
+    .modalLogin {
+      width: 70%
+    } 
+}
+
+@media only screen and (max-width: 414px){
+  .modalLogin form {
+    width: 97% !important;
+    height: 1200px !important;
+  }
+  .heightSection0 {
+    height: 1200px !important;
+  }  
+}
+
+@media only screen and (max-width: 639px){
+  .modalLogin {
+    width: 95%
+  }
+  .heightSection0 {
+    height: 1000px !important;
+  }
+}
+
+.textLegal {
+    margin:4px auto;
+}
+
+.heightSection0 {
+    height: 700px;
+}
+
+
+.heightSection4 {
+    height: 1500px;
+}
+
+
+.textLegal p {
+    font-size: 10px;
+    color: #434A58;
+    text-align: justify;
+    padding: 4px;
+    font-family: stag_sans_book;
+}
+
+.radio_label .options {
+    float: left;
+    margin-right: 8px;
+    color: #143F9F !important;
+}
+
+@media (max-width: 1024px){
+    .side_rigth_content {
+        width: 100%;
+        text-align: center;
+        padding: 0px !important;
+    }
+}
+
+@media (max-width: 505px){
+.inputTable {
+    width: 65% !important;
+    margin: 10px -1px !important;
+}
+}
+
+.tableUpload {
+    margin: 8px 0px 8px 0px !important;
+}
+.tableUpload .row{
+    margin: 0px !important;
+}
+
+.tableUpload hr {
+    border:1px solid #E9E9E7;
+}
+
+.modalSize {
+    width: 80%;
+}
+
+.modalSize .contentItems {
+    margin: 0 auto;
+    width: 85%;
+}
+
+
+.mtop8 {
+    margin-bottom: 8px;
+}
+
+.simulaConsumo p, .simulaHipotecario p, .simulaBeneficios p {
+    color: #003A8C !important;
+    text-decoration: underline;
+}
+
+.ui-tooltip,.arrow:after {
+    background-color: #F7E9E9 !important;
+    border: 2px solid #f4ccdf;
+}
+
+.ui-tooltip {
+    padding: 10px 10px;
+    color: #c4136c !important;
+    border-radius: 3px;
+    font: bold 11px "Helvetica Neue", Sans-Serif;
+    box-shadow: 0 0 7px black;
+}
+
+.arrow {
+    width: 70px;
+    height: 16px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    margin-left: -35px;
+    bottom: -16px;
+}
+
+.arrow.top {
+    top: -16px;
+    bottom: auto;
+}
+
+.arrow.left {
+    left: 20%;
+}
+
+.arrow:after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: -20px;
+    width: 25px;
+    height: 25px;
+    box-shadow: 6px 5px 9px -9px black;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.arrow.top:after {
+    bottom: -20px;
+    top: auto;
+}
+
+.solicitudEnviada h3 {
+    color: #006ec1;
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.solicitudEnviada {
+    color: #222222;
+}
+
+.solicitudEnviada .boxBlue {
+    background: #F3F5F7;
+    border-radius: 4px;
+    padding: 16px 16px;
+    font-size: 15px;
+    border: solid 1px #DDE3EA;
+    margin-bottom: 10px;
+}
+.solicitudEnviada .boxBlue p {
+    font-size: 15px !important;
+}
+
+.solicitudEnviada ul {
+    font-size: 15px;
+}
+
+.solicitudEnviada .footer {
+    font-size: 15px #EDEDED;
+    width: 95%;
+    padding: 16px;
+}
+
+.log-in-form {
+    border-radius: 5px;
+    border: 1px solid #8FBBDF;
+    padding: 29px 16px !important;
+    margin: auto 0 auto 20px;
+    box-shadow: 0px 4px 5px rgba(0,0,0,0.3);
+    color:#666666;
+}
+
+.log-in-form label {
+    color:#666666 !important;
+}
+
+.log-in-form div .button_init {
+    padding: 4px 15px !important;
+}
+
+.log-in-form .init_button {
+    width: 100%;
+    margin-bottom: 10px !important;
+}
+
+.log-in-form a {
+    font-size: 14px !important;
+    color: #666666 !important;
+    text-decoration: underline;
+}
+.log-in-form .link a {
+    text-decoration: none;
+}
+
+
+.modalLogin {
+    width: 50%;
+    top: -23px;
+}
+
+.modalLogin form {
+    width: 300px;
+    margin: 0px auto 20px auto;
+}
+
+
+.montoSpan span {
+  font-size:12px;
+  color:#434a58;
+  font-weight: 700;
+}
+

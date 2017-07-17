@@ -1,0 +1,128 @@
+label.ui-marmots-label-check,label.ui-marmots-label-radio {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    cursor: pointer;
+    margin-bottom: 0;
+    font-weight: normal;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none
+}
+
+label.ui-marmots-label-check input,label.ui-marmots-label-radio input {
+    position: absolute;
+    left: -9999em
+}
+
+label.ui-marmots-label-check.marmots-label-right,label.ui-marmots-label-radio.marmots-label-right {
+    background-position: right 2px !important;
+    padding-right: 26px
+}
+
+label.ui-marmots-label-check.marmots-label-left,label.ui-marmots-label-radio.marmots-label-left {
+    padding-left: 26px;
+    padding-bottom: 7px
+}
+
+ .ui-marmots-label-check input {
+    display: none;
+}
+.ui-marmots-label-check {
+    background-image: url(../img/default/input-check.png);
+    background-repeat: no-repeat;
+    background-position: 0 0px;
+    font: -webkit-control !important
+}
+
+.ui-marmots-label-check.disabled {
+    background-image: url(../img/default/input-check-disabled.png) !important
+}
+
+.ui-marmots-label-check:hover {
+    background-image: url(../img/default/input-check-hover.png)
+}
+
+.ui-marmots-label-check.on {
+    background-image: url(../img/default/input-check-checked.png)
+}
+
+.ui-marmots-label-check.on.disabled {
+    background-image: url(../img/default/input-check-checked-disabled.png) !important
+}
+
+.ui-marmots-label-check.on:hover {
+    background-image: url(../img/default/input-check-hover-checked.png)
+}
+
+#solicitar-informacion-lightbox .checkboxes {
+    text-align: center
+}
+
+#solicitar-informacion-lightbox .checkboxes label {
+    margin: 5px 25px 10px 0
+}
+
+/*Modal*/
+.modal { background: #F4F7F5; display: block; margin: 0 auto; padding: 10px; width: 622px; }
+.modal .container { background: #fff; border: 1px solid #E3E4E4; margin: 0; min-height: 100px; width: 601px; padding: 13px 33px 30px; }
+.modal .container h2 { float: left; color: #0078D2; font-family: 'bbva_light'; font-size: 20px; font-weight: lighter; margin: 0px 0 20px 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; width: 90%; vertical-align: top; }
+.modal .container .cruzTop { float: right; vertical-align: top; cursor: pointer; }
+.modal .container p { color: #333; font-size: 12px; margin:0; padding:0; font-family:Arial, Helvetica, sans-serif;}
+.modal .container hr { display: block;     height: 1px;     background: transparent;     width: 100%;     border: none;     border-top: solid 1px #D5E2EE;     clear:both; }
+
+.modal.modDetalle label { width: 170px; display:inline-block;}
+.modal.modDetalle label.normal {font-weight: normal;}
+.modal.modDetalle h2 { margin:15px 0px 5px;}
+.modal.modDetalle .blockRight  label {}
+.modal.modDetalle .blockLeft {width:50%; float:left;}
+.modal.modDetalle .blockRight {width:50%; float:left;}
+.modal.modDetalle .blockLeft span {text-align: left; display: inline-block; color:#333333;}
+.modal.modDetalle .blockRight span {text-align: right; display: inline-block; color:#333333;}
+.modal.modDetalle .bases { display:block; text-align: center;}
+.modal.modDetalle .campo {margin: 0;}
+.modal.modDetalle .campo.Total span,
+.modal.modDetalle .campo.Total label {font-size: 20px; font-weight: normal;}
+.modal.modDetalle .bases small { font-size: 13px; text-align: center;}
+.modal.modDetalle .ModalBtns {height: 50px; margin-right: -33px; margin-left: -33px; margin-top: 20px; border-top: 1px solid #DCDCDC; border-bottom: 1px solid #DCDCDC}
+.modal.modDetalle .ModalBtns .btnW100 {display:block; text-align: center; line-height: 50px;}
+.modal.modDetalle .ModalBtns .btnW100.first {/* border-right: 1px solid #DCDCDC; */
+padding-left: 77%;}
+.modal.consumo [class*=frase-legal] p, .modal.consumo [class*=frase-legal] h5, .modal.consumo [class*=frase-legal] li {
+	font-size: 10px;
+}
+.modal .container h3 { color: #0078D2; font-family: 'bbva_light'; font-size: 20px; font-weight: lighter; margin: 0px 0 0 0; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.modal .container.con-campana { padding-bottom: 10px; }
+.modal .campana-ingreso { max-width:669px; /* max-height:130px; */ overflow:hidden; font-size: 1px; }
+.modal .post-label { font-family: Arial, Helvetica, sans-serif; font-weight:bold; font-size:11px; color:#333; padding-left: 6px; }
+.modal .container .msj-boton { min-height:50px; }
+.modal .container .msj-boton strong { padding-bottom: 6px; }
+
+.reingreso_pregunta {
+	font-family: Arial, Helvetica, sans-serif; 
+	font-weight:bold;
+	font-size: 1.32em;
+	color:#464646; 
+	padding-left: 25px; 
+}
+
+.btn127{ 
+	background:url(../img/btn.png) no-repeat top; 
+	border:none;
+	cursor:pointer; 
+	text-align:center; 
+	height: 29px;
+    width: 102px; 
+	line-height:36px; 
+	color:#fff; 
+	font-size:13px;
+}
+.btn127:hover,
+.btn127:focus{ background:url(../img/btn.png) no-repeat bottom;}
+.visibleErr{
+	display:block;
+}
+.invisibleErr{
+	display:none;
+}

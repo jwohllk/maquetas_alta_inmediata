@@ -1,0 +1,62 @@
+var equifax = [
+	{
+		"question" : {
+			"1" : "¿Cual es tu nombre?"
+		},
+		"alternatives" : {
+			"1" : "Jurgen",
+			"2" : "Angel",
+			"3" : "Pedro",
+			"4" : "Alejandro",
+			"5" : "Ignacio"
+		}
+	},
+	{
+		"question" : {
+			"2" : "¿Cual es tu banco?"
+		},
+		"alternatives" : {
+			"1" : "BBVA",
+			"2" : "Santander",
+			"3" : "Scotiabank",
+			"4" : "Security",
+			"5" : "Falabella"
+		}
+	},
+	{
+		"question" : {
+			"3" : "¿Cual es el apellido de tu madre?"
+		},
+		"alternatives" : {
+			"1" : "ROMERO",
+			"2" : "IBARRA",
+			"3" : "CACERES",
+			"4" : "DIAZ",
+			"5" : "PEREZ"
+		}
+	},
+	{
+		"question" : {
+			"4" : "¿Cual es el apellido de tu padre?"
+		},
+		"alternatives" : {
+			"1" : "IBARRA",
+			"2" : "SANCHEZ",
+			"3" : "HERNANDEZ",
+			"4" : "GARCIA",
+			"5" : "TOLEDO"
+		}
+	},
+	{
+		"question" : {
+			"5" : "¿Cuantos hijos tienes?"
+		},
+		"alternatives" : {
+			"1" : "0",
+			"2" : "5",
+			"3" : "3",
+			"4" : "1",
+			"5" : "4"
+		}
+	},
+]

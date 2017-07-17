@@ -1,0 +1,1207 @@
+<%@page import="java.util.Date"%>
+<%@ page contentType="text/html" pageEncoding="UTF-8" %>
+<%@ page language="java"%>
+<!DOCTYPE html>
+<html lang="es-cl">
+	<head>
+		<link rel="stylesheet" href="fu/css/foundation2.css?v=1.5">
+		<link rel="stylesheet" href="fu/css/stylebbva.css?v=1.5">
+		<link rel="stylesheet" href="fu/css/main.css?v=1.5" media="all" />
+		<link rel="stylesheet" href="fu/css/jquery-ui.css">
+		<link rel="stylesheet" href="fu/css/jquery.modal.css">
+		<link rel="stylesheet" href="fu/css/fu_haztecliente.css">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Formulario &Uacute;nico</title>
+		<script src="${url.assets.adobedtm.com}"></script>
+	</head>
+	<body style="height: auto;">
+
+		<div class="formcontent container_fluid">
+
+			<section id="facade" class="section_main stag_sans_ligth">
+				<div class="blocked_disabled"></div>
+				<div class="row">
+					<div class="small-12 medium-4 large-4 columns">
+						<article class="side_left">
+							<div class="offer">
+								<div class="content_under">
+									<div class="row">
+										<div>
+											<h3>&iexcl;Bienvenido, nos alegra tenerte por ac&aacute;!</h3>
+											<p>Queremos ser tu banco, estar donde t&uacute; est&eacute;s.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="small-12 medium-8 large-8 columns">
+						<article class="side_rigth">
+							<div id="side_rigth_banner">
+								<p>
+									<img id="img1" src="https://www.bbva.cl/fbin/mult/banner-grande_tcm1106-623015.jpg" class="responsive image1"/>
+									<img id="img2" src="https://www.bbva.cl/fbin/mult/banner-pequeno_tcm1106-623016.jpg" class="responsive image2"/>
+								</p>
+							</div>
+							<article class="content-pasos contentSteps1 paso1">
+								<h4 class="font_lite" id="tituloPrimeraPantalla">
+								</h4>
+								<div class="row row block_two_columns" style="margin-top:20px!important;margin-right:20px!important;margin-left:20px!important;">
+									<div class="large-6 medium-6 small-12 columns">
+										<img src="fu/img/icon-producto.png"/>
+										<span>1- Selecciona tus Productos de Inter&eacute;s</span>
+									</div>
+									<div class="large-6 medium-6 small-12 columns">
+										<img src="fu/img/icon-persona.png"/>
+										<span>2- D&eacute;janos tus Datos Complementarios</span>
+									</div>
+								</div>
+							</article>
+							<div class="side_rigth_content">
+								<article class="campos-inicio">
+									<div class="small-12 medium-12 large-12 block_two_columns">
+										<h4 class="font_lite">Antes de comenzar, comp&aacute;rtenos la siguiente informaci&oacute;n</h4>
+										<p class="line_space_1">Recuerda, los campos marcados con asterisco (*) son obligatorios.</p>
+										<div class="row block_two_columns">
+											<div class="small-12 medium-12 large-6 column margin_input_form">
+												<label>&iquest;C&oacute;mo te llamas?*</label>
+												<input class="entrada-alfabetica" placeholder="Nombre" type="text" id="lb_name1" name="lb_name1" maxlength="100" onblur="enableNextZero()" autocomplete="off"/>
+											</div>
+											<div class="small-12 medium-12 large-6 column margin_input_form">
+												<label>&iquest;Cu&aacute;l es tu RUT?*</label>
+												<input placeholder="Ej.21.997.968-1" type="text" id="lb_rut" name="lb_rut" maxlength="12" onblur="enableNextZero()" autocomplete="off"/>
+											</div>
+										</div>
+										<div class="button_init">
+											<button class="init_button button_disable" id="next_zero" disabled="disabled">Comenzar</button>
+										</div>
+										<a href="javascript:void(0);" style="text-decoration:underline;" onclick="accedeBbvaCloud();">Ir a BBVA Cloud</a>
+
+										<div id="modal-acceso-bbva-cloud" class="modal" style="display:none;top:100px;position:absolute!important;">
+
+											<div class="row head_step cabecera-modal-acceso-cloud">
+												<p>Acceso BBVA Cloud</p>
+											</div>
+
+											<!-- Contenedor principal Acceso BBVA Cloud -->
+											<div id="contenedor-acceso-cloud-principal" class="row block_two_columns content_text contenido-modal-acceso-cloud">
+
+												<div id="acceso-bbva-error-login" class="row" style="display:none;">
+													<div class="visible-lg large-2 column margin_input_form"></div>
+													<div class="small-12 medium-12 large-8 column margin_input_form">
+														<p class="cloud-block-error" style="line-height: 1.5;margin-top:2px!important;margin-left:0px!important;margin-right:0px!important;">
+															<img src="fu/img/cloud-alerta-subir-documentos.png" style="float:left;padding-right:15px;margin-top:10px!important;"/>
+															<span>Datos incorrectos<br/>Alguno de los datos ingresados es incorrecto.</span>
+														</p>
+													</div>
+													<div class="visible-lg large-2 column margin_input_form"></div>
+												</div>
+												<div class="row">
+													<div class="visible-lg large-2 column margin_input_form"></div>
+													<div class="small-12 medium-12 large-8 column margin_input_form">
+														<label>RUT*</label>
+														<input type="text" id="rutAcceso" maxlength="12"/>
+													</div>
+													<div class="visible-lg large-2 column margin_input_form"></div>
+												</div>
+												<div class="row">
+													<div class="visible-lg large-2 column margin_input_form"></div>
+													<div class="small-12 medium-12 large-8 column margin_input_form">
+														<label>C&oacute;digo BBVA Cloud*</label>
+														<input type="password" id="pwdAcceso" minlength="6" maxlength="10" style="height:34px!important;"/>
+													</div>
+													<div class="visible-lg large-2 column margin_input_form"></div>
+												</div>
+												<div class="row">
+													<div class="contenedor-btn-acceso-cloud">
+														<center><button id="btnIngresarAccesoBBVACloud" class="init_button btn-acceso-cloud button_disable" disabled="disabled" onclick="obtenerPendientesCloud();">Ingresar</button></center>
+													</div>
+													<div class="small-12 medium-12 large-12 column margin_input_form olvidaste-tu-codigo">
+														<center><a target="_blank" style="text-decoration:underline;" href="https://www.bbva.cl/bbvanet/login_generar_clave.html">&iquest;Olvidaste tu c&oacute;digo BBVA Cloud?</a></center>
+													</div>
+												</div>
+
+											</div>
+
+											<!-- Contenedor actualizacion de clave luego del login -->
+											<div id="contenedor-acceso-cloud-cambio-clave" class="row block_two_columns content_text contenido-modal-acceso-cloud" style="display:none;">
+
+												<!-- Texto informativo condiciones necesarias para entradas entradas -->
+												<div class="row">
+													<div class="visible-lg large-2 column margin_input_form"></div>
+													<div class="small-12 medium-12 large-8 column margin_input_form">
+														<div class="cloud-block-warning">
+															<div class="cloud-block-warning-info">
+																<img src="fu/img/cloud-block-warning.png"/>
+																<p class="cloud-block-warning-text">Para mayor seguridad deber&aacute; cambiar su clave actual a una nueva clave de 6 a 10 caracteres alfanum&eacute;ricos.</p>
+															</div>
+															<ul class="cloud-block-warning-list">
+																<li>No elijas caracteres iguales como AAA &oacute; 1111.</li>
+																<li>No elijas una clave que coincida con parte de tu RUT.</li>
+																<li>No elijas pares de n&uacute;meros iguales como 121212 &oacute; 565656.</li>
+																<li>No elijas s&oacute;lo n&uacute;meros para una clave mayor a 6 d&iacute;gitos num&eacute;ricos.</li>
+																<li>No elijas n&uacute;meros consecutivos como 1234 &oacute; 9876.</li>
+															</ul>
+														</div>
+													</div>
+													<div class="visible-lg large-2 column margin_input_form"></div>
+												</div>
+
+												<!-- Bloque informativo error proceso de actualizacion de clave de acceso -->
+												<div class="row error-container" style="display:none;">
+													<div class="visible-lg large-2 column margin_input_form"></div>
+													<div class="small-12 medium-12 large-8 column margin_input_form">
+														<p class="cloud-block-error" style="line-height: 1.5;margin-top:2px!important;margin-left:0px!important;margin-right:0px!important;">
+															<img src="fu/img/cloud-alerta-subir-documentos.png" style="float:left;padding-right:15px;margin-top:10px!important;"/>
+															<span class="error-description"></span>
+														</p>
+													</div>
+													<div class="visible-lg large-2 column margin_input_form"></div>
+												</div>
+
+												<!-- Clave actual -->
+												<div class="row">
+													<div class="visible-lg large-2 column margin_input_form"></div>
+													<div class="small-12 medium-12 large-8 column margin_input_form">
+														<label>Clave actual</label>
+														<input type="password" id="claveActual" minlength="6" maxlength="10" style="height:34px!important;"/>
+													</div>
+													<div class="visible-lg large-2 column margin_input_form"></div>
+												</div>
+
+												<!-- Clave nueva 1 -->
+												<div class="row">
+													<div class="visible-lg large-2 column margin_input_form"></div>
+													<div class="small-12 medium-12 large-8 column margin_input_form">
+														<label class="cloud-info-label-unspaced">Nueva clave<br/><small>(6 a 10 caract&eacute;res)</small></label>
+														<input type="password" id="claveNueva1" minlength="6" maxlength="10" style="height:34px!important;"/>
+													</div>
+													<div class="visible-lg large-2 column margin_input_form"></div>
+												</div>
+
+												<!-- Repita nueva clave -->
+												<div class="row">
+													<div class="visible-lg large-2 column margin_input_form"></div>
+													<div class="small-12 medium-12 large-8 column margin_input_form">
+														<label class="cloud-info-label-unspaced">Repite la nueva clave<br/><small>(6 a 10 caract&eacute;res)</small></label>
+														<input type="password" id="claveNueva2" minlength="6" maxlength="10" style="height:34px!important;"/>
+													</div>
+													<div class="visible-lg large-2 column margin_input_form"></div>
+												</div>
+
+												<!-- Boton Acceso -->
+												<div class="row">
+													<div class="contenedor-btn-acceso-cloud">
+														<center><button id="btnConfirmaActualizacionClave" class="init_button btn-acceso-cloud button_disable" disabled="disabled" onclick="confirmaActualizacionClaveAcceso();">Confirmar</button></center>
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+								</article>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section id="step_one" class="section_main text_font_form height_step2" style="display:none">
+				<div class="blocked_disabled"></div>
+				<div class="row">
+					<div class="small-12 medium-4 large-4 columns">
+						<article id="p1" class="side_left height_step height_step2">
+							<div class="offer">
+								<div class="row">
+									<div class="small-11 medium-11 large-11 columns">
+										<div id="head_step_one" class="head_step">
+											<label>PASO 1 de 2</label>
+											<p>Productos de inter&eacute;s</p>
+										</div>
+									</div>
+									<div class="small-1 medium-1 large-1 columns">
+										<div class="circle_check type1 ">
+											<label id="check_step_one" class="circle_unsuccess" for=""></label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="content_text">
+										<p>Descubre los productos BBVA y disfruta de los beneficios que tenemos para ti.</p>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="small-12 medium-8 large-8 columns">
+						<article class="side_rigth">
+
+							<!-- Contenedor ofertas disponibles -->
+							<article class="ofertas" id="lista-ofertas" style="display: none">
+								<div class="small-1 medium-1 large-1 columns">&nbsp;</div>
+								<div class="small-10 medium-10 large-10 columns contentOfertas">
+									<div class="headOfertas">
+										<h6 id="tituloOfertas">&iexcl;Felicidades, tenemos <strong>productos con ofertas</strong> pre aprobadas para ti!</h6>
+									</div>
+									<div id="divOfertaPlanCuenta" style="display:none" class="divOferta column item-oferta">
+										<h6><img src="fu/img/check.png"/> Plan de Cuenta Corriente</h6>
+										<p>Todos los productos que necesitas para hacer tu vida m&aacute;s simple.</p>
+									</div>
+									<div id="divOfertaConsumo" style="display:none" class="divOferta column item-oferta">
+										<h6><img src="fu/img/check.png"/> Cr&eacute;dito de Consumo</h6>
+										<p>Haz lo que quieras con tu cr&eacute;dito pre aprobado de: <span id="montoPreaprobadoConsumo">$1.000.000</span></p>
+									</div>
+									<div id="divOfertaHipotecario" style="display:none" class="divOferta column item-oferta">
+										<h6><img src="fu/img/check.png"/> Cr&eacute;dito Hipotecario</h6>
+										<p>Tienes <span id="montoPreaprobadoHipotecario">$1.000.000</span>para comprar esa propiedad que tienes en mente.</p>
+									</div>
+									<div id="divOfertaTarjetaCredito" style="display:none" class="divOferta column item-oferta">
+										<h6><img src="fu/img/check.png"/> Tarjeta de Cr&eacute;dito</h6>
+										<p>Con cupo de <span id="montoPreaprobadoTC">$1.000.000</span>y grandes beneficios.</p>
+									</div>
+								</div>
+								<div class="medium-1 large-1 columns">&nbsp;</div>
+							</article>
+
+							<div class="side_rigth_content">
+								<div class="small-12 medium-12 large-12 block_two_columns">
+									<div class="row text_tittle ">
+										<p><span class="nombre-solicitante">Jhon Doe</span>, &iquest;Qu&eacute; productos te gustar&iacute;a solicitar?</p>
+									</div>
+									<div class="row block_two_columns lista-productos" id="lista-productos" style="display: none;">
+										<div class="small-12 medium-4 large-4 column">
+											<div class="producto-solicitar">
+												<div class="checkbox input-checkbox">
+													<input class="checkProducto" type="checkbox" name="cta-cte" id="cta-cte" value=""/>
+												</div>
+												<img src="fu/img/cuentacorriente.png"/>
+												<p>Plan de Cuenta Corriente</p>
+											</div>
+										</div>
+										<div class="small-12 medium-4 large-4 column">
+											<div class="producto-solicitar">
+												<div class="checkbox input-checkbox">
+													<input class="checkProducto" type="checkbox" name="consumo" id="consumo" value=""/>
+												</div>
+												<img src="fu/img/creditoconsumo.png"/>
+												<p>Cr&eacute;dito de Consumo</p>
+											</div>
+										</div>
+										<div class="small-12 medium-4 large-4 column">
+											<div class="producto-solicitar">
+												<div class="checkbox input-checkbox">
+													<input class="checkProducto" type="checkbox" name="hipotecario" id="hipotecario" value=""/>
+												</div>
+												<img src="fu/img/creditohipotecario.png"/>
+												<p>Cr&eacute;dito Hipotecario</p>
+											</div>
+										</div>
+										<div class="small-12 medium-4 large-4 column">
+											<div class="producto-solicitar">
+												<div class="checkbox input-checkbox">
+													<input class="checkProducto" type="checkbox" name="tarjetacredito" id="tarjetacredito" value=""/>
+												</div>
+												<img src="fu/img/tarjetadecredito.png"/>
+												<p>Tarjeta de Cr&eacute;dito</p>
+											</div>
+										</div>
+										<div class="small-12 medium-4 large-4 column">
+											<div class="producto-solicitar">
+												<div class="checkbox input-checkbox">
+													<input class="checkProducto" type="checkbox" name="wallet" id="wallet" value=""/>
+												</div>
+												<img src="fu/img/bbvawallet.png"/>
+												<p>BBVA Wallet</p>
+											</div>
+										</div>
+										<div class="small-12 medium-4 large-4 column">
+											<div class="producto-solicitar">
+												<div class="checkbox input-checkbox">
+													<input class="checkProducto" type="checkbox" name="visaenjoy" id="visaenjoy" value=""/>
+												</div>
+												<img src="fu/img/visaenjoy.png"/>
+												<p>Visa Enjoy</p>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="button_init">
+											<div style="display:inline;margin-right:25px;"><a href="javascript:void(0);" style="text-decoration:underline;" onclick="prev();">&lt;&lt; Anterior</a></div>
+											<button class="init_button button_disable" id="next_one" disabled="true">Continuar</button>
+										</div>
+									</div>
+								</div>
+								<div class="small-8 large-8 medium-8 textLegal">
+									<p>*La oferta pre aprobada no es vinculante. La contrataci&oacute;n del producto est&aacute; sujeta a la aprobaci&oacute;n de riesgo comercial del cliente y el cumplimiento de las pol&iacute;ticas crediticias del Banco, disponibles en www.bbva.cl.</p>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section id="step_two" class="section_main text_font_form" style="display:none">
+				<div class="blocked_disabled"></div>
+				<div class="row">
+					<div class="small-12 medium-4 large-4 columns">
+						<article class="side_left height_step">
+							<div class="offer">
+								<div class="row">
+									<div class="small-11 medium-11 large-11 columns">
+										<div id="head_step_two" class="head_step">
+											<label>PASO 1 de 2</label>
+											<p id="tituloMenuSimuladores">Productos de inter&eacute;s</p>
+										</div>
+									</div>
+									<div class="small-1 medium-1 large-1 columns">
+										<div class="circle_check type1 ">
+											<label id="check_step_two" class="circle_unsuccess" for=""></label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="content_text">
+										<p id="textoMenuSimuladores">Descubre los productos BBVA y disfruta de los beneficios que tenemos para ti.</p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="footer_step">
+										<ul>
+											<li id="lstBeneficios" style="display:none;">Simulador de Beneficios</li>
+											<li id="lstConsumo" style="display:none;">Simulador Cr&eacute;dito de Consumo</li>
+											<li id="lstHipotecario" style="display:none;">Simulador Cr&eacute;dito Hipotecario</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="small-12 medium-8 large-8 columns ">
+						<article class="side_rigth">
+
+							<div id="simConsumoIframe"></div>
+
+							<!-- HOME SIMULADORES -->
+							<div class="home-simuladores" id="home-simuladores">
+								<div class="row text_tittle">
+									<p><span class="nombre-solicitante">Jhon Doe</span>, <span class="titulo-simuladores">&iquest;te gustar&iacute;a simular tu Cr&eacute;dito?</span></p>
+								</div>
+								<p class="text-center">
+								</p>
+								<div class="side_rigth_content">
+									<div class="row block_two_columns">
+										<div class="small-12 medium-12 large-12 columns">
+											<div class="row">
+												<div class="small-12 medium-2 large-2 columns hiddenMedium">&nbsp;</div>
+												<div id="btnSimuladorBeneficios" class=" columns text-center simulaBeneficios small-12 medium-6 large-4" style="display:none">
+													<a href="#"><div class="beneficios"></div><p style="font-size: 13px;">Simula tus Beneficios</p></a>
+												</div>
+
+												<div id="btnSimuladorBeneficiosDisabled" class="columns text-center small-12 medium-6 large-4" style="display:none">
+													<div>
+														<div class="beneficios-ok"></div>
+														<p style="font-size: 13px;">Simula tus Beneficios</p>
+													</div>
+												</div>
+												<div id="btnSimuladorConsumo" class="columns text-center simulaConsumo small-12 medium-6 large-4" style="display:none">
+													<a href="#">
+														<div class="consumo"></div>
+														<p style="font-size: 13px;">Simula tu Cr&eacute;dito de Consumo</p>
+													</a>
+												</div>
+
+												<div id="btnSimuladorConsumoDisabled" class="columns text-center small-12 medium-6 large-4" style="display:none">
+													<div>
+														<div class="consumo-ok"></div>
+														<p style="font-size: 13px;">Simula tu Cr&eacute;dito de Consumo</p>
+													</div>
+												</div>
+												<div id="btnSimuladorHipotecario" class="columns text-center simulaHipotecario small-12 medium-6 large-4" style="display:none">
+													<a href="#">
+														<div class="hipotecario"></div>
+														<p style="font-size: 13px;">Simula tu Cr&eacute;dito Hipotecario</p>
+													</a>
+												</div>
+												<div id="btnSimuladorHipotecarioDisabled" class=" columns text-center small-12 medium-6 large-4" style="display:none">
+													<div>
+														<div class="hipotecario-ok"></div>
+														<p style="font-size: 13px;">Simula tu Cr&eacute;dito de Hipotecario</p>
+													</div>
+												</div>
+												<div class="small-12 medium-3 large-2 columns hiddenMedium">&nbsp;</div>
+											</div>
+											<div class="lineaProductos" id="lineaEntremedia"></div>
+										</div>
+										<div class="row">
+											<div class="button_init">
+												<div style="display:inline;margin-right:25px;"><a href="javascript:void(0);" style="text-decoration:underline;" onclick="prev();">&lt;&lt; Anterior</a></div>
+												<button class="btn-secondary" id="next_two">Seguir sin simular</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- SIMULADORE CONSUMO -->
+							<div class="simuladorConsumo contentSimuladores">
+								<div class="row text_tittle">
+									<p><span class="nombre-solicitante">Jhon Doe</span>, est&aacute;s viendo el detalle de tu simulaci&oacute;n</p>
+								</div>
+							</div>
+
+							<!-- SIMULADOR HIPOTECARIO -->
+							<div class="simuladorHipotecario contentSimuladores">
+								<div class="row text_tittle">
+									<p><span class="nombre-solicitante">Jhon Doe</span>, est&aacute;s viendo el detalle de tu simulaci&oacute;n</p>
+								</div>
+							</div>
+
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section id="step_three" class="section_main text_font_form" style="display:none">
+				<div class="blocked_disabled"></div>
+				<div class="row">
+
+					<!-- Contenedor lateral informacion adicional paso actual -->
+					<div class="small-12 medium-4 large-4 columns">
+						<article id="p3" class="side_left height_step">
+							<div class="offer">
+								<div class="row">
+									<div class="small-11 medium-11 large-11 columns">
+										<div id="head_step_tree" class="head_step">
+											<label>PASO 2 de 2</label>
+											<p>Datos de contacto</p>
+										</div>
+									</div>
+									<div class="small-1 medium-1 large-1 columns">
+										<div class="circle_check type1">
+											<label id="check_step_tree" class="circle_unsuccess" for=""></label>
+										</div>
+									</div>
+								</div>
+								<div class="row ">
+									<div class="content_text">
+										<p>Procesaremos tu solicitud y te contactaremos.</p>
+									</div>
+								</div>
+								<div class="row" id="informacion-lateral-adicional-cloud">
+									<div style="margin-bottom:25px;">
+										<ul><li style="font-weight:bolder;">Datos Adicionales</li></ul>
+									</div>
+									<div class="content_text">
+										<p>Antes de compartir tus documentos y agilizar las solicitudes de tus productos es necesario que completes unos datos adicionales</p>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+
+					<div class="small-12 medium-8 large-8 columns ">
+						<article class="side_rigth">
+							<div class="side_rigth_content">
+								<div class="row text_tittle ">
+									<p style="margin-bottom:0px"><span class="nombre-solicitante">Jhon Doe</span>, est&aacute;s a un paso de enviar tu solicitud.</p>
+								</div>
+								<p class="line_space_1">Recuerda, los campos marcados con asterisco (*) son obligatorios.</p>
+
+								<!-- Datos basicos forumario unico -->
+								<div class="row block_two_columns large-10" id="divCamposBasicosRequeridos">
+									<div class="row">
+										<div class="small-12 medium-6 large-6 column margin_input_form">
+											<label>Tel&eacute;fono m&oacute;vil*</label>
+											<input type="text" autocomplete="off" id="lb_phone" name="lb_phone" maxlength="9" onkeyup="enableSendRequest()" onchange="enableSendRequest()" oninput="enableSendRequest()"/>
+										</div>
+										<div class="small-12 medium-6 large-6 column margin_input_form">
+											<label>Email*</label>
+											<input type="email" autocomplete="off" id="field-email" name="field-email" maxlength="100" onkeyup="enableSendRequest()" onchange="enableSendRequest()" oninput="enableSendRequest()"/>
+											<input type="email" id="emailRobot" name="emailRobot" value="noTocado" maxlength="100" style="display: none;"/>
+										</div>
+										<div class="small-12 medium-6 large-6 column margin_input_form">
+											<label>Regi&oacute;n*</label>
+											<select class="select_" id="region" name="region">
+												<option value="">Selecciona una Regi&oacute;n</option>
+											</select>
+										</div>
+										<div class="small-12 medium-6 large-6 column margin_input_form">
+											<label>Comuna*</label>
+											<select class="select_" id="comuna" name="comuna">
+												<option value="">Selecciona una Comuna</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="row block_two_columns large-10" id="divUniversidad" style="display:none">
+									<div class="row">
+										<div class="small-12 medium-6 large-6 column margin_input_form">
+											<label>Universidad*</label>
+											<select id="universidad" name="universidad" onkeyup="enableSendRequest()" onchange="enableSendRequest()" oninput="enableSendRequest()">
+												<option value="">Selecciona una Universidad</option>
+												<option value="1">...</option>
+											</select>
+										</div>
+										<div class="small-12 medium-6 large-6 column margin_input_form">
+											<label>Carrera*</label>
+											<select id="carrera" name="carrera" onkeyup="enableSendRequest()" onchange="enableSendRequest()" oninput="enableSendRequest()">
+												<option value="">Selecciona una Carrera</option>
+												<option value="1">...</option>
+											</select>
+										</div>
+										<div class="small-12 medium-6 large-6 column margin_input_form">
+											<label>A&ntilde;o en Curso*</label>
+											<select id="añoCarrera" name="añoCarrera" onkeyup="enableSendRequest()" onchange="enableSendRequest()" oninput="enableSendRequest()">
+												<option value="">Selecciona una opci&oacute;n</option>
+												<option value="4to">4&deg; a&ntilde;o</option>
+												<option value="5to">5&deg; a&ntilde;o</option>
+												<option value="6to">6&deg; a&ntilde;o</option>
+												<option value="7mo">7&deg; a&ntilde;o</option>
+												<option value="egr">Egresado</option>
+											</select>
+											<span class="side_span_right" style="text-align: right !important;">1&deg;, 2&deg;, 3&deg; a&ntilde;o no aplica</span>
+										</div>
+										<div class="small-12 medium-6 large-6 column margin_input_form"></div>
+									</div>
+								</div>
+
+								<div class="row block_two_columns large-10" id="divConvenio" style="display:none">
+									<div class="row">
+										<div class="small-12 medium-6 large-6 column margin_input_form">
+											<label>Fecha de ingreso a la empresa*</label>
+											<input type="text" id="fechaIngresoEmpresa" name="fechaIngresoEmpresa" onkeyup="enableSendRequest()" onchange="enableSendRequest()" oninput="enableSendRequest()" placeholder="dd/mm/aaaa"/>
+										</div>
+										<div class="small-12 medium-6 large-6 column margin_input_form">
+											<label>Tipo de Contrato*</label>
+											<select id="tipoContrato" name="tipoContrato" onkeyup="enableSendRequest()" onchange="enableSendRequest()" oninput="enableSendRequest()">
+												<option value="">Selecciona tipo de Contrato</option>
+												<option value="1">Indefinido</option>
+												<option value="2">...</option>
+											</select>
+										</div>
+										<div class="small-12 medium-6 large-6 column margin_input_form">
+											<label>C&oacute;digo de Convenio*</label>
+											<input type="text" id="codConvenio" name="codConvenio" onkeyup="enableSendRequest()" onchange="enableSendRequest()" oninput="enableSendRequest()"/>
+										</div>
+										<div class="small-12 medium-12 large-6 column margin_input_form"></div>
+									</div>
+								</div>
+
+								<div class="row block_two_columns large-9" style="margin-top:50px;" id="divDatosComplementarios">
+									<form id="formularioCloud" method="post" class="tooltip-validate required" novalidate="novalidate" onsubmit="false">
+										<div>
+											<div class="row contentUploadFile" style="margin-top:25px;">
+												<div class="row">
+													<div class="small-12 medium-12 large-12 column" id="switchDatosComplementarios">
+														<div class="checks_condition">
+															<input type="checkbox" class="uploadFiles" id="uploadFiles" value="" onclick="toggleDatosComplementarios();"/>
+															<label for="uploadFiles" data="uploadFiles" value=""></label>
+														</div>
+														<div class="gravamen" style="float: left;">
+															Subir mis documentos con BBVA Cloud
+															<span class="help" data-tooltip="wczp4h-tooltip" aria-haspopup="true" title="" aria-describedby="s3km8g-tooltip" data-yeti-box="s3km8g-tooltip" data-toggle="s3km8g-tooltip" data-resize="s3km8g-tooltip" data-events="resize">
+																<img src="fu/img/icon_ayuda.jpg"/>
+															</span>
+														</div>
+													</div>
+												</div>
+												
+												<!-- DATOS COMPLEMENTARIOS -->
+												<div id="files" style="display: none;">
+													<div class="row" style="margin-left: 0.5rem;">
+														<span style="float: left;">
+															Antes de subir tus documentos debes completar estos datos
+														</span>
+													</div>
+													<div class="row">					<!-- Nombre, Apellidos -->
+														<div class="small-12 medium-12 large-6 column margin_input_form">
+															<label>Nombre*</label>
+															<input type="text" autocomplete="off" id="dc_nombre" onblur="" maxlength="20" class="entrada-alfabetica"/>
+														</div>
+														<div class="small-12 medium-12 large-6 column margin_input_form">
+															<label>Apellidos*</label>
+															<input placeholder="Paterno Materno" type="text" autocomplete="off" id="dc_apellidos" onblur="" maxlength="40" class="entrada-alfabetica"/>
+														</div>
+													</div>
+
+													<div class="row">					<!-- Fecha de nacimiento, Sexo -->
+														<div class="small-12 medium-12 large-6 column margin_input_form">
+															<div class="row">
+																<div class="large-12 medium-10 column input_margin mtop8">
+																	<label id="labelFNac">Fecha de nacimiento(dd/mm/aaaa)*</label>
+																</div>
+															</div>
+															<div class="row fecha">
+																<div class="large-3 medium-4 column input_margin mtop4">
+																	<input type="text" id="fnac_dd" onchange="clearFieldError(this);" onblur="validaFechaNacimiento();" maxlength="2" class="month2 entrada-numerica"/>
+																</div>
+																<div class="large-3 medium-4 column input_margin mtop4">
+																	<input type="text" id="fnac_mm" onchange="clearFieldError(this);" onblur="validaFechaNacimiento();" maxlength="2" class="month2 entrada-numerica"/>
+																</div>
+																<div class="large-4 medium-4 column input_margin mtop4">
+																	<input type="text" id="fnac_aaaa" onchange="clearFieldError(this);" onblur="validaFechaNacimiento();" maxlength="4" class="year2 entrada-numerica"/>
+																</div>
+																<div class="large-4 medium-4 column input_margin mtop4"></div>
+															</div>
+														</div>
+														<div class="small-12 medium-12 large-6 column margin_input_form medio">
+															<label>Sexo*</label>
+															<div class="large-6 medium-4 columns">
+																<label class="radio_label"> <div class="options">Masculino&nbsp;</div></label>
+																<input type="radio" class="css-checkbox" name="lb_sex" value="M" id="Masculino" checked=""/>
+																<label for="Masculino" class="css-label radGroup1 radGroup2"></label>
+															</div>
+															<div class="large-6 medium-4 columns" style="float:left;">
+																<label class="radio_label "><div class="options">Femenino&nbsp;</div></label>
+																<input type="radio" name="lb_sex" value="F" id="Femenino" class="css-checkbox"/>
+																<label for="Femenino" class="css-label radGroup1 radGroup2"></label>
+															</div>
+														</div>
+													</div>
+
+													<div class="row">					<!-- Nacionalidad, Estado civil -->
+														<div class="small-12 medium-12 large-6 column margin_input_form">
+															<label>Nacionalidad*</label>
+															<select id="lb_nacionalidad" class="select_" style="display: none;">
+																<option value="">Selecciona tu nacionalidad</option>
+																<option value="CHI">Chilena</option>
+																<option value="EXT">Extranjera</option>
+															</select>
+														</div>
+														<div class="small-12 medium-12 large-6 column margin_input_form">
+															<label>Estado civil*</label>
+															<select id="lb_civ_sta" class="select_" style="display: none;">
+																<option value="">Selecciona</option>
+																<option value="C">CASADO C/SEP.BIENES</option>
+																<option value="D">DIVORCIADO</option>
+																<option value="N">C.CIVIL COM BIENES</option>
+																<option value="O">C.CIVIL SEP BIENES</option>
+																<option value="S">CASADO S/SEP.BIENES</option>
+																<option value="T">SOLTERO/A</option>
+																<option value="V">VIUDO/A</option>
+															</select>
+														</div>
+													</div>
+
+													<div class="row single-space">		<!-- Calle, N°, Tipo, N° -->
+														<div class="small-12 medium-12 large-6 column margin_input_form">
+															<div class="row">
+																<div class="large-8 medium-10 column input_margin mtop8 largo">
+																	<label>Calle*</label>
+																</div>
+																<div class="large-4 medium-4 column input_margin mtop8 corto">
+																	<label>N&ordm;*</label>
+																</div>
+															</div>
+															<div class="row">
+																<div class="large-8 medium-8 column input_margin mtop8 largo">
+																	<input type="text" autocomplete="off" id="dc_calle" maxlength="80" class="month2 entrada-alfabetica"/>
+																</div>
+																<div class="large-4 medium-4 column input_margin mtop8 corto">
+																	<input type="text" id="dc_calle_numero" maxlength="4" class="year2 entrada-numerica"/>
+																</div>
+															</div>
+														</div>
+														<div class="small-12 medium-12 large-6 column margin_input_form ">
+															<div class="row">
+																<div class="large-8 medium-10 column input_margin mtop8 largo">
+																	<label>Tipo</label>
+																</div>
+																<div class="large-4 medium-4 column input_margin mtop8 corto">
+																	<label>N&ordm;</label>
+																</div>
+															</div>
+															<div class="row">
+																<div class="large-8 medium-8 column input_margin mtop8 largo">
+																	<select id="ui-id-1" class="select_ " style="display: none;">
+																		<option value="">Selecciona</option>
+																		<option value="BLK">BLOCK</option>
+																		<option value="CAS">CASA</option>
+																		<option value="CLA">CLASIFICADOR</option>
+																		<option value="CSL">CASILLA</option>
+																		<option value="DPT">DEPARTAMENTO</option>
+																		<option value="EDF">EDIFICIO</option>
+																		<option value="KM.">KILOMETRO</option>
+																		<option value="LOC">LOCAL</option>
+																		<option value="LOT">LOTE</option>
+																		<option value="NRO">NUMERO</option>
+																		<option value="OFI">OFICINA</option>
+																		<option value="OTR">OTROS</option>
+																		<option value="PAR">PARADERO</option>
+																		<option value="PRC">PARCELA</option>
+																		<option value="PSJ">PASAJE</option>
+																		<option value="PSO">PISO</option>
+																		<option value="SIT">SITIO</option>
+																		<option value="TRR">TORRE</option>
+																	</select>
+																</div>
+																<div class="large-4 medium-4 column input_margin mtop8 corto">
+																	<input type="text" id="tipo_numero" maxlength="4" class="year2 entrada-alfanumerica"/>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<div class="row">					<!-- N° cedula -->
+														<div class="small-12 medium-12 large-6 column margin_input_form">
+															<label>N&uacute;mero de serie de tu c&eacute;dula*
+																<div class="tooltips bottom fLeft mTop5 tooltips-bottomLeft">
+																	<a href="javascript:void(0);" class="icon-tool"></a>
+																	<div class="arrtooltip">
+																		<div class="inner-mensaje">
+																			<img src="fu/img/cedula.jpg"/>
+																		</div>
+																		<span class="arrow"></span>
+																	</div>
+																</div>
+															</label>
+															<input type="text" autocomplete="off" id="numeroSerieCedula" onblur="consultaValidezCedula($(this).val());" maxlength="10" class="entrada-alfanumerica"/>
+														</div>
+													</div>
+
+												</div>
+
+											</div>
+										</div>
+									</form>
+								</div>
+
+								<!-- Boton enviar solicitud Hazte cliente Cloud, invoca enrollment -->
+								<div class="row" id="contenedor-confirma-enviar-solicitud-cloud">
+									<div class="divBtnConfirmaAvance">
+										<div class="contenedorAnterior" style="display:inline;margin-right:25px;"><a href="javascript:void(0);" style="text-decoration:underline;" onclick="prev();">&lt;&lt; Anterior</a></div>
+										<a id="confirmaAvanzaHazteCliente" href="javascript:void(0);" class="enlBtnConfirmaAvance btn-secondary button_disable">Enviar solicitud</a>
+									</div>
+								</div>
+
+								<!-- Boton enviar solicitud formulario unico, legacy -->
+								<div class="row" id="contenedor-btn-enviar-solicitud-funico">
+									<div class="button_init">
+										<div class="contenedorAnterior" style="display:inline;margin-right:25px;"><a href="javascript:void(0);" style="text-decoration:underline;" onclick="prev();">&lt;&lt; Anterior</a></div>
+										<button class="init_button" id="enviarSolicitud">Enviar solicitud</button>
+									</div>
+								</div>
+
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+
+			<section id="step_fourth" class="section_main text_font_form height_step2 heightSection4" style="display:none;">
+				<div class="blocked_disabled" style="z-index: -1;"></div>
+				<div class="row">
+
+					<!-- Bloque lateral izquierdo, Paso 4 -->
+					<div class="small-12 medium-12 large-4 columns">
+						<article id="p1" class="side_left height_step height_step2">
+							<div class="offer">
+								<div class="row">
+									<div class="small-11 medium-11 large-11 columns">
+										<div id="head_step_one" class="head_step">
+											<label></label>
+											<p>Subir Documentos</p>
+										</div>
+									</div>
+									<div class="small-1 medium-1 large-1 columns">
+										<div class="circle_check type1 ">
+											<label id="check_step_one" class="circle_unsuccess" for=""></label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="content_text">
+										<p>Selecciona los documentos requeridos y s&uacute;belos a tu BBVA Cloud.</p>
+									</div>
+								</div>
+								<div class="footer_step">
+									<div class="row" style=""></div>
+								</div>
+							</div>
+						</article>
+					</div>
+
+					<!-- Bloque contenido derecha, Paso 4 -->
+					<div class="small-12 medium-12 large-8 columns">
+						<article class="side_rigth">
+							<div style="margin:0 auto !important;" class="row small-12 large-10 medium-10 columns">
+								<div class="row block_two_columns contentTableUpload">
+									<div class="head" style="margin-top: 40px !important;">
+										<div class="small-12 large-6 medium-6 columns">
+											<p>Subir Documentos</p>
+										</div>
+										<div id="contenedorBtnSubirDocumentosMasTarde" class="small-5 large-6 medium-6 columns">
+											<button class="init_button button_blank"><a href="javascript:void(0);" onclick="mostrarModalEnvioSMS();">Subir Documentos en otro momento </a></button>
+										</div>
+									</div>
+								</div>
+								<div id="invalid-row" class="row">
+									<div id="Invalid-Parameter" class="col-md-10 col-md-offset-1 formato-archivos-modal" style="display:none;top:-2em; word-wrap: break-word;">
+										<span style="vertical-align:text-top;" id="Invalid-Parameter-file-name"></span>
+									</div>
+								</div>
+								<div id="productRequestsContainer"></div>
+
+								<!-- Contenedor resultado operacion de uploadDocument -->
+								<div id="contenedor-resultado-upload-document" class="small-12 medium-12 large-12 column margin_input_form" style="display: none;">
+									<div class="col-md-10 col-xs-10 col-md-offset-1">
+										<p style="font-size: 21px;line-height: 1;margin-left: 15px; margin-top: 20px; color: #000;font-weight:700;">Documentos requeridos para: <span class="informacion-producto"></span>.</p>
+									</div>
+									<article id="contenido-resultado-upload-document" class="capgemini-tables holder"></article>
+									<div id="detalle-upload" class="row">
+										<div class="detalle-resultado"><center style="font-size:smaller;">Subido: <span class="detalle-upload-subidos">2</span> Rechazado: <span class="detalle-upload-rechazados">0</span></center></div>
+										<div class="barra-progreso"><center><img src="fu/img/bbva-cloud-progress-bar.png" width="100%"/></center></div>
+										<!--
+										<div class="row">
+											<div class="progress-bar active"></div>
+										</div>
+										-->
+										<div class="detalle-porcentaje"><center><span class="detalle-porcentaje-valor" style="font-size:small;">100% completado</span></center></div>
+									</div>
+									<div id="mensaje-upload" class="row">
+										<div class="col-lg-12 col-md-12" style="margin-top: 25px;">
+											<center>
+												<div class="upload-success" style="display:none;"><img src="fu/img/upload-success.png" style="margin-right: 10px;"/><span>Los documentos han sido correctamente subidos</span></div>
+												<div class="upload-alert" style="display:none;"><img src="fu/img/upload-alert.png" style="margin-right: 10px;"/><span>Ha ocurrido un error al subir alguno de sus documentos</span></div>
+												<div class="upload-error" style="display:none;"><img src="fu/img/upload-error.png" style="margin-right: 10px;"/><span>Error en la carga de documentos</span></div>
+											</center>
+										</div>
+									</div>
+									<div class="row">
+										<div class="button_init">
+											<a class="init_button" href="javascript:void(0);" onclick="cerrarUploadDocuments();">Terminar</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+
+				</div>
+
+				<!-- Modal: Te hemos enviado un SMS con tu codigo de acceso BBVA Cloud -->
+				<div id="modals" style="display:none;font-family:'stag_sans_ligth'!important;position:relative;top:0px;" class="modal modalSize">
+					<div id="head_step" class="row head_step" style="background-color: #eaeaea; padding-top: 30px; text-align: center !important; font-weight: 500;">
+						<p>BBVA Cloud</p>
+					</div>
+					<div class="row block_two_columns content_text modalSms" id="modal02" style="height: 0px !important">
+						<div class="small-12 medium-12 large-12 columns content" style="padding-top: 20px!important;padding-bottom:20px!important;">
+							<h2>
+								<img src="fu/img/ico-cloud-modal.png" style="flota:left;"/><strong>Te hemos enviado un SMS</strong> con tu <strong>c&oacute;digo de acceso</strong> a BBVA CLOUD.
+							</h2>
+						</div>
+						<div class="large-12 medium-12 small-12 columns content contentSection">
+							<h2><strong>Instrucciones para retomar la subida de documentos:</strong></h2>
+							<center>
+								<div class="row" style="width:50%;">
+									<div class="large-6 medium-4 small-12 columns items">
+										<img src="fu/img/ir-a-bbva.png"/><p>1. Haz click en "<strong>Ir a BBVA Cloud</strong>".<br/>desde la secci&oacute;n <strong>Hazte Cliente</strong></p>
+									</div>
+									<div class="large-6 medium-4 small-12 columns items">
+										<img src="fu/img/codigo-bbva.png" style="height:46px!important;"/><p>2. Ingresa con tu <strong>RUT y tu c&oacute;digo<br/> de acceso a BBVA Cloud.</strong></p>
+									</div>
+								</div>
+							</center>
+						</div>
+						<div class="large-12 medium-12 small-12 columns" style="margin-top: 20px !important">
+							<button class="button_close_modal text_close_modal_button" onclick="aceptarModalEnvioSmsHazteCliente();">
+								Aceptar
+							</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- Modal: Ha ocurrido un error al enviar el SMS -->
+				<div id="modalErrorEnvioSMS" style="display:none;font-family:'stag_sans_ligth'!important;position:relative;top:0px;" class="modal modalSize">
+					<div id="head_step" class="row head_step" style="background-color: #eaeaea; padding-top: 30px; text-align: center !important; font-weight: 500;">
+						<p>BBVA Cloud</p>
+					</div>
+					<div class="row block_two_columns content_text modalSms" id="modal02" style="height: 0px !important">
+						<div class="small-12 medium-12 large-12 columns content">
+							<img src="fu/img/ico-cloud-modal.png"/>
+							<h2><strong>Ha ocurrido un error en el env&iacute;o de SMS. <span id="mensajeErrorEnvioSMS"></span></strong></h2>
+						</div>
+						<div class="large-12 medium-12 small-12 columns" style="margin-top: 20px !important">
+							<button class="button_close_modal text_close_modal_button" onclick="cerrarModalErrorEnvioSms();">Aceptar</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- Modal: Informacion envío SMS -->
+				<div id="modalInfoEnvioSMS" style="display:none;font-family:'stag_sans_ligth'!important;position:relative;top:0px;" class="modal modalSize">
+					<div id="head_step" class="row head_step" style="background-color: #eaeaea; padding-top: 30px; text-align: center !important; font-weight: 500;">
+						<p>BBVA Cloud</p>
+					</div>
+					<div class="row block_two_columns content_text modalSms" id="modal02" style="height: 0px !important">
+						<div class="small-12 medium-12 large-12 columns content">
+							<img src="fu/img/ico-cloud-modal.png"/>
+							<h2><strong>Recuerda que puedes volver y completar tu solicitud cuando vuelvas con tu clave de Acceso a trav&eacute;s del enlace Acceso BBVA Cloud</strong></h2>
+						</div>
+						<div class="large-12 medium-12 small-12 columns" style="margin-top: 20px !important">
+							<button class="button_close_modal text_close_modal_button" onclick="aceptarModalEnvioSmsHazteCliente();">Aceptar</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- Modal: Generica error -->
+				<div id="modalGenericaError" style="display:none;font-family:'stag_sans_ligth'!important;position:relative;top:0px;" class="modal modalSize">
+					<div id="head_step" class="row head_step" style="background-color: #eaeaea; padding-top: 30px; text-align: center !important; font-weight: 500;">
+						<p>BBVA Cloud</p>
+					</div>
+					<div class="row block_two_columns content_text modalSms" id="modal02" style="height: 0px !important">
+						<div class="small-12 medium-12 large-12 columns content">
+							<img src="fu/img/ico-cloud-modal.png"/>
+							<h2><strong>Hemos tenido un inconveniente al procesar tu solicitud, por favor intenta m&aacute;s tarde.</strong></h2>
+						</div>
+						<div class="large-12 medium-12 small-12 columns" style="margin-top: 20px !important">
+							<button class="button_close_modal text_close_modal_button" onclick="cerrarModalGenerica();">Aceptar</button>
+						</div>
+					</div>
+				</div>
+
+				<!-- Modal: Ya eres cliente BBVA, accede a traves de acceso clientes -->
+				<div id="modal-redireccion-acceso-cliente" style="display:none; font-family: 'stag_sans_ligth' !important;position:relative;top:0px;" class="modal modalSize">
+					<div id="head_step" class="row head_step" style="background-color: #eaeaea; padding-top: 30px; text-align: center !important; font-weight: 500;">
+						<p>BBVA Cloud</p>
+					</div>
+					<div class="row block_two_columns content_text modalSms" id="modal02" style="height: 0px !important">
+						<div class="small-12 medium-12 large-12 columns content">
+							<img src="fu/img/ico-cloud-modal.png"/>
+							<h2><strong><span id="modal-redireccion-nombre"></span></strong>, ya eres cliente BBVA, accede a BBVA Cloud a trav&eacute;s de Acceso Clientes.</h2>
+							<br/>
+							<center><a href="https://www.bbva.cl/" target="_blank" style="cursor:pointer;"><img src="fu/img/bbva-cloud-acceso-clientes.png"/></a></center>
+						</div>
+						<div class="large-12 medium-12 small-12 columns" style="margin-top: 20px !important">
+						</div>
+					</div>
+				</div>
+
+				<!-- Modal: No tienes documentos pendientes aun en BBVA Cloud -->
+				<div id="modal-sin-pendientes-cloud" style="display:none; font-family:'stag_sans_ligth'!important;position:relative;top:0px;" class="modal modalSize">
+
+					<div id="head_step" class="row head_step" style="background-color:#eaeaea;padding-top:30px;text-align:center!important;font-weight:500;">
+						<p>BBVA Cloud</p>
+					</div>
+
+					<div class="row block_two_columns content_text modalSms" id="modal02" style="height: 0px !important">
+						<div class="small-12 medium-12 large-12 columns content">
+							<img src="fu/img/ico-cloud-modal.png"/>
+							<h2 id="texto-sin-pendientes-nombre"><strong><span id="modal-sin-pendientes-nombre"></span></strong>, no tienes documentos pendientes a&uacute;n en BBVA Cloud.</h2>
+						</div>
+						<div class="large-12 medium-12 small-12 columns" style="margin-top: 20px !important">
+						</div>
+					</div>
+
+				</div>
+
+			</section>
+
+		</div>
+
+		<!-- Formulario Unico, reingreso solicitud -->
+		<div id="modal-formulario" class="modal" style="display: none; width:50%; top:0px;">
+			<div id="title_modal" class="row">
+				<label>Solicitud enviada anteriormente</label>
+				<a href="#close-modal" rel="modal:close" class="close-modal ">Close</a>
+			</div>
+			<div class="row block_two_columns">
+				<div class="inside-modal" style="padding: 5px !important;">
+					<p>
+						<img src="fu/img/alert.png" class="alerT" style="margin-bottom: 20px;"/>
+						<strong>Estimado <span class="nombre-solicitante">Jhon Doe</span></strong>, <br/>
+						con fecha <span id="reingreso_fecha">17-10-2016</span>, ya tenemos ingresada una solicitud de <span id="reingreso_productos"><strong>Plan de Cuenta Corriente</strong></span>.
+					</p>
+					<p class="text-center">
+						<strong>
+							&iquest;Desea enviar esta solicitud nuevamente?
+						</strong>
+					</p>
+					<div class="row">
+						<div class="small-12 medium-12 large-12 column text-center">
+							<button class="btn-primario" id="reingreso-no">No</button>
+							<button class="btn-primario" id="reingreso-si">Si</button>
+						</div>
+					</div>
+					<div class="row">
+						<div class="small-12 medium-12 large-12 column text-center">
+							<small>
+								Cualquier duda respecto a tu solicitud puedes comunicarte al 600 600 1100
+							</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Formulario Unico, login -->
+		<div id="modal-formulario-login" style="display: none; top:0px;" class="modal modalLogin">
+			<div id="title_modal_login" class="row">
+				<h4 class="font_lite">Bienvenido <span class="nombre-solicitante">Estimado</span>, <strong>ya eres cliente BBVA</strong></h4>
+				<a href="#close-modal" rel="modal:close" class="close-modal ">Close</a>
+			</div>
+			<div class="row block_two_columns">
+				<div class="inside-modal">
+					<div class="row">
+						<div class="small-1 medium-1 large-2 columns hiddenMedium">&nbsp;</div>
+						<div class="medium-12 large-8 columns">
+							<div id="pantallaAcceso">
+								<p>
+									Tenemos una oferta <strong><span id="creditoAprovado">Aprobada</span></strong> de <strong><span id="montoCredito">$4.000.000</span></strong> para ti, ingresa tu clave para conocerla.
+								</p>
+								<div class="row column log-in-form">
+									<label>*RUT
+									<label class="rut" id="rut" name="rut"> </label>
+									</label>
+									<label>*Clave de acceso
+									<input type="password" class="form-control required" minlength="6" autocomplete="off" maxlength="10" id="clave" name="clave" data-msg-required="Debe ingresar la clave para continuar." data-msg-minlength="La clave debe tener {0} car&aacute;cteres como m&iacute;nimo."/>
+									</label>
+									<div class="row" style="margin:0 auto !important;">
+										<button id="accesoLogin" class="init_button col-lg-6" >Ingresar</button>
+										<button id="saltarLogin" class="btn-secondary col-lg-6" style="width: 100%;">En otro momento</button>
+									</div>
+									<hr/>
+								</div>
+							</div>
+						</div>
+						<div class="small-12 medium-1 large-2 columns hiddenMedium">&nbsp;</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div style="display:none">
+			<button id="validadorCreditos" style="display:none"></button>
+		</div>
+
+		<!-- Modal: Tienes una solicitud sin completar para tu {producto} con fecha -->
+		<div id="modal-completar-solicitud" style="display:none; font-family: 'stag_sans_ligth' !important;position:relative;top:0px;" class="modal modalSize">
+			<div class="row head_step" style="background-color: #eaeaea; padding-top: 30px; text-align: center !important; font-weight: 500;">
+				<p>BBVA Cloud</p>
+			</div>
+			<div class="row block_two_columns content_text modalSms" style="height: 0px !important">
+				<div class="large-12 medium-12 small-12 columns contentSection">
+					<div class="texto-informacion">
+						<span id="modal-completar-solicitud-nombre"></span> una solicitud sin completar para tu <strong><span id="mcs-producto-glosa">Cr&eacute;dito de Consumo</span></strong> con <strong>fecha: <span id="mcs-producto-fecha">00/00/00</span>.</strong>
+					</div>
+					<h3 class="texto-flujo">&iquest;Deseas completar tu solicitud o reemplazarla con una nueva?</h3>
+					<div class="row">
+						<div class="row block_two_columns large-9" style="margin-top: 20px !important">
+							<div class="small-6 medium-6 large-6 column margin_input_form button_left""><button id="btn-modal-completar-solicitud-completar" onclick="btnCompletarSolicitudCompletar();" class="btn-completar-solicitud">Ir a completar</button></div>
+							<div class="small-6 medium-6 large-6 column margin_input_form button_right""><button id="btn-modal-completar-solicitud-nueva" onclick="btnCompletarSolicitudNueva();" class="btn-secondary">Nueva Solicitud</button></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+ 
+		<!-- Modal: Tienes una solicitud completa cloud -->
+		<div id="modal-solicitud-completa" style="display:none; font-family: 'stag_sans_ligth' !important;position:relative;top:0px;" class="modal modalSize">
+			<div class="row head_step" style="background-color: #eaeaea; padding-top: 30px; text-align: center !important; font-weight: 500;">
+				<p>BBVA Cloud</p>
+			</div>
+			<div class="row block_two_columns content_text modalSms" style="height: 0px !important">
+				<div class="large-12 medium-12 small-12 columns contentSection">
+					<div class="texto-informacion">
+						<span id="modal-solicitud-completa-nombre"></span> , ya tenemos ingresada una solicitud de <strong><span id="msc-producto-glosa">Cr&eacute;dito de Consumo</span></strong> con <strong>fecha: <span id="msc-producto-fecha">00/00/00</span>.</strong>
+					</div>
+					<h3 class="texto-flujo">&iquest;Deseas enviar esta solicitud nuevamente?</h3>
+					<div class="row">
+						<div class="row block_two_columns large-9" style="margin-top: 20px !important">
+							<div class="small-6 medium-6 large-6 column margin_input_form button_left"><button id="btn-modal-solicitud-completa-completar" onclick="btnSiSolicitudCompleta();" class="init_button">Si</button></div>
+							<div class="small-6 medium-6 large-6 column margin_input_form button_right"><button id="btn-modal-solicitud-completa-nueva" onclick="btnNoSolicitudCompleta();" class="init_button">No</button></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Contenedor solicitud enviada correctamente -->
+		<div class="solicitudEnviada" id="solicitudEnviada" style="display:none">
+			<h2><img src="fu/img/check-solicitud.png"/> Solicitud enviada exitosamente</h2>
+			<p>&iexcl;Hemos recibido tu solicitud! Nos comunicaremos contigo a la brevedad de lunes a viernes, entre 09:00 y las 18:00 horas, a los datos de contacto ingresados en el formulario.</p>
+			<p>Muchas gracias por contactarnos.</p>
+		</div>
+
+		<!-- Contenedor error al enviar solicitud -->
+		<div class="solicitudEnviada" id="solicitudError" style="display:none">
+			<h2><img src="fu/img/alert.png"/> No se pudo enviar la solicitud</h2>
+			<p> A ocurrido un error mientras se procesaba la solicitud, por favor, int&eacute;ntelo m&aacute;s tarde. </p>
+			<p class="descripcionError" style="display:none;"></p>
+		</div>
+
+		<div style="display:none"><iframe id="iframeAw1" name="iframeAw1" src="fu/blank.html"></iframe></div>
+		<div style="display:none"><iframe id="iframeAw2" name="iframeAw2" src="fu/blank.html"></iframe></div>
+		<div style="display:none"><iframe id="iframeAw3" name="iframeAw3" src="fu/blank.html"></iframe></div>
+
+		<%
+			long ts = (new java.util.Date()).getTime();
+		%>
+		<script type="text/javascript" src="fu/js/jquery.js"></script>
+		<script type="text/javascript" src="fu/js/jquery-ui.js"></script>
+		<script type="text/javascript" src="fu/js/foundation2.js"></script>
+		<script type="text/javascript" src="fu/js/modernizr.js"></script>
+		<script type="text/javascript" src="fu/js/jquery.modal.js"></script>
+		<script type="text/javascript" src="fu/js/iframeResizer.contentWindow.min.js"></script>
+		<script type="text/javascript" src="fu/js/iframeResizer.min.js"></script>
+		<script type="text/javascript" src="fu/js/jquery.price_format.2.0.min.js"></script>
+		<script type="text/javascript" src="fu/js/moment.min.js"></script>
+		<script type="text/javascript" src="fu/js/main.js"></script>
+		<script type="text/javascript" src="fu/js/service.js"></script>
+		<script type="text/javascript" src="fu/js/jquery.mask.min.js"></script>
+		<script type="text/javascript" src="fu/js/config.js"></script>
+		<script type="text/javascript" src="fu/js/events.js"></script>
+		<script type="text/javascript" src="fu/js/validate.js"></script>
+		<script type="text/javascript" src="fu/js/fu.js?v=<%=ts %>"></script>
+		<script type="text/javascript" src="fu/js/utils_fu.js?v=<%=ts %>"></script>
+		<script type="text/javascript" src="fu/js/fu_haztecliente.js?v=<%=ts %>"></script>
+		<script type="text/javascript" src="fu/js/fu_subirdocumentos.js?v=<%=ts %>"></script>
+		<script type="text/javascript" src="fu/js/fu_haztecliente_utils.js?v=<%=ts %>"></script>
+		<script type="text/javascript" src="fu/js/fu_haztecliente_referencias.js?v=<%=ts %>"></script>
+		<script>
+			iFrameResize({
+				enablePublicMethods     : true,
+				heightCalculationMethod : 'grow'
+			});
+			$(document).ready(function(){
+				var idProductoInformado = '<%=request.getAttribute("idProducto")%>';
+
+				//Configura el selector de nacionalidades para contener el listado de paises entregado por banco
+				configuraSelectorNacionalidad(lstPaises);
+				if(<%=request.getAttribute("idProductoToCompare")%> == 9 || <%=request.getAttribute("idProductoToCompare")%> == 10 || <%=request.getAttribute("idProductoToCompare")%> == 15){
+					$("#tituloPrimeraPantalla").html("<h3 class='text-center'>Simula en dos simples pasos:</h3>");
+					$("#subtitulo1PrimeraPantalla").html("<p class='line_space_2'>1- Personaliza tu simulaci&oacute;n</p>");
+					$("#tituloMenuSimuladores").text("Simula tu producto");
+				}else{
+					$("#tituloPrimeraPantalla").html("<h3 class='text-center'>Hazte Cliente en dos simples pasos:</h3>");
+					$("#subtitulo1PrimeraPantalla").html("<p class='line_space_2'>1- Selecciona tus productos de inter&eacute;s</p>");
+				}
+
+				//Precarga estilo error
+				//enableNextZero();
+
+				$("#facade").find('.blocked_disabled').css("z-index", "-1");
+				//$('html,body', window.parent.document).animate({scrollTop : $("#facade").offset().top + $('header', window.parent.document).height()}, 'slow');
+				animation_scroll("#step_one");
+
+				$(document).foundation();
+				com.bbva.main.Main.init();
+				$(".select_").selectmenu();
+				$(document).tooltip({
+					position : {
+						my : "center bottom-7",
+						at : "center top",
+						using : function(position) {
+							$(this).css(position);
+							$("<div>").addClass("arrow").appendTo(this);
+						}
+					}
+				});
+			});
+		</script>
+		<script type="text/javascript">_satellite.pageBottom();</script>
+	</body>
+</html>

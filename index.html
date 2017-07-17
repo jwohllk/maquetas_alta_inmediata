@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Alta Inmediata</title>
+	<head>
+		<link rel="stylesheet" href="fu/css/foundation2.css?v=1.5">
+		<link rel="stylesheet" href="fu/css/stylebbva.css?v=1.5">
+		<link rel="stylesheet" href="fu/css/main.css?v=1.5" media="all" />
+		<link rel="stylesheet" href="fu/css/jquery-ui.css">
+		<link rel="stylesheet" href="fu/css/jquery.modal.css">
+		<!-- <link rel="stylesheet" href="fu/css/fu_haztecliente.css"> -->
+		<link rel="stylesheet" href="fu/css/nt-altainmedita.css">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Formulario &Uacute;nico</title>
+<!-- 		<script src="${url.assets.adobedtm.com}"></script>
+ -->	</head>
+</head>
+<body>
+	
+	<section id="step_one" class="section_main text_font_form height_step2">
+				<div class="row altainmediata-step23">
+					<div class="small-12 medium-4 large-4 columns">
+						<article id="p1" class="side_left side_leftaltainmediata height_step height_step2">
+							<div class="offer offer-altainmediata">
+								<div class="row">
+									<div class="small-11 medium-11 large-11 columns">
+										<div id="head_step_one" class="head_step">
+											<label>PASO 2 de 3</label>
+											<p>Verificaci&oacute;n de identidad</p>
+										</div>
+									</div>
+									<div class="small-1 medium-1 large-1 columns">
+										<div class="circle_check type1 ">
+											<label id="check_step_one" class="circle_unsuccess" for=""></label>
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="content_text">
+										<p>Completa los siguientes datos para continuar.</p>
+									</div>
+								</div>
+							</div>
+						</article>
+					</div>
+					<div class="small-12 medium-8 large-8 columns">
+						<article class="side_rigth">
+							<div class="side_rigth_content">
+								<article class="campos-inicio block_two_columns">
+									<div class="small-12 medium-12 large-12 block_two_columns">
+										<h4 class="font_lite">Para continuar con tu Crédito necesitamos verificar tu identidad.</h4>
+										<p class="line_space_1">Recuerda, los campos marcados con asterisco (*) son obligatorios.</p>
+										<h6 class="u-blue-text u-align-left u-title-responsive">Por favor completa los siguientes datos:</h6>
+										<div class="row equifaxQuestions">
+											<!-- Se genera a traves de nt-altainmediata elementos de este tipo -->
+											<!-- <div class="small-12 medium-12 large-6 column margin_input_form">
+												<label>Pregunta Equifax</label>
+												<select class="select_ preguntas" id="pregunta1" name="pregunta1">
+													<option value="">Seleccione</option>
+													<option value="1">Metropolitana</option>
+													<option value="2">...</option>
+												</select>
+											</div>
+											-->
+										</div>
+										<div class="row equifaxTerms">
+											<div class="small-12 medium-12 large-12 columns">
+												<input id="termConditions" type="checkbox"><label for="termConditions" class="labelTerm">Autorizo a consultar informaci&oacute;n de Previred *</label><a href="#" class="termConsiderations">T&eacute;rminos y consideraciones</a>
+											</div>
+											<div class='small-12 medium-12 large-12 columns acceptTermConditions'>
+												<label class='label-error'>Debe aceptar los t&eacute;rminos y consideraciones.</label>
+											</div>
+										</div>
+										<div class="button_init">
+											<button class="init_button" id="continueEquifax">Continuar</button>
+										</div>
+									</div>
+								</article>
+							</div>
+						</article>
+					</div>
+				</div>
+			</section>
+	<script type="text/javascript" src="fu/js/jquery.js"></script>
+	<script type="text/javascript" src="fu/js/jquery-ui.js"></script>
+	<script type="text/javascript" src="fu/js/foundation2.js"></script>
+	<script type="text/javascript" src="fu/js/modernizr.js"></script>
+	<script type="text/javascript" src="fu/js/jquery.modal.js"></script>
+	<script type="text/javascript" src="fu/js/iframeResizer.contentWindow.min.js"></script>
+	<script type="text/javascript" src="fu/js/iframeResizer.min.js"></script>
+	<script type="text/javascript" src="fu/js/jquery.price_format.2.0.min.js"></script>
+	<script type="text/javascript" src="fu/js/moment.min.js"></script>
+	<script type="text/javascript" src="fu/js/main.js"></script>
+	<script type="text/javascript" src="fu/js/service.js"></script>
+	<script type="text/javascript" src="fu/js/jquery.mask.min.js"></script>
+	<script type="text/javascript" src="fu/js/config.js"></script>
+	<script type="text/javascript" src="fu/js/events.js"></script>
+	<script type="text/javascript" src="fu/js/validate.js"></script>
+	<script type="text/javascript" src="fu/js/fu.js?v=<%=ts %>"></script>
+	<script type="text/javascript" src="fu/js/utils_fu.js?v=<%=ts %>"></script>
+	<script type="text/javascript" src="fu/js/fu_haztecliente.js?v=<%=ts %>"></script>
+	<script type="text/javascript" src="fu/js/fu_subirdocumentos.js?v=<%=ts %>"></script>
+	<script type="text/javascript" src="fu/js/fu_haztecliente_utils.js?v=<%=ts %>"></script>
+	<script type="text/javascript" src="fu/js/fu_haztecliente_referencias.js?v=<%=ts %>"></script>
+	<script type="text/javascript" src="fu/js/nt-altainmediata.js?v=<%=ts %>"></script>
+	<script>
+		$(function() {
+			$(document).foundation();
+			com.bbva.main.Main.init();
+			$(".select_").selectmenu();
+			$(document).tooltip({
+				position : {
+					my : "center bottom-7",
+					at : "center top",
+					using : function(position) {
+						$(this).css(position);
+						$("<div>").addClass("arrow").appendTo(this);
+					}
+				}
+			});
+		});
+	</script>
+</body>
+</html>
